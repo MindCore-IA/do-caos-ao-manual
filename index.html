@@ -428,21 +428,49 @@
 
   /* COMPRA */
   .compra {
-    background: var(--cinza-escuro);
+    background: linear-gradient(135deg, #c44f3a 0%, #7B4FCC 50%, #003BB5 100%);
     color: var(--branco);
     padding: 80px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
+  .compra::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 60px solid rgba(255,255,255,0.08);
+    top: -120px;
+    right: -120px;
+    pointer-events: none;
+  }
+
+  .compra::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 40px solid rgba(255,255,255,0.06);
+    bottom: -100px;
+    left: -80px;
+    pointer-events: none;
+  }
+
+  .compra .container { position: relative; z-index: 1; }
+
   .compra h2 { font-size: clamp(26px, 5vw, 38px); font-weight: 700; margin-bottom: 12px; color: var(--branco); }
-  .compra-sub { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 40px; }
+  .compra-sub { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 40px; }
 
   .preco-box { display: inline-block; margin-bottom: 32px; }
-  .preco-de { font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: line-through; margin-bottom: 4px; }
+  .preco-de { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: line-through; margin-bottom: 4px; }
   .preco-por { font-size: 56px; font-weight: 700; color: var(--branco); line-height: 1; }
   .preco-por sup { font-size: 22px; vertical-align: super; }
-  .preco-aviso { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 8px; }
-  .garantia { margin-top: 24px; font-size: 13px; color: rgba(255,255,255,0.4); }
+  .preco-aviso { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 8px; }
+  .garantia { margin-top: 24px; font-size: 13px; color: rgba(255,255,255,0.7); }
 
   /* FOOTER */
   footer {
